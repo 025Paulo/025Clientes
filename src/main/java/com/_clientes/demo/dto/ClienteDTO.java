@@ -38,8 +38,6 @@ public class ClienteDTO {
         children = entity.getChildren();
     }
 
-
-
     public long getId() {
         return id;
     }
