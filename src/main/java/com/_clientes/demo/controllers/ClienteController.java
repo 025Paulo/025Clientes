@@ -3,6 +3,7 @@ package com._clientes.demo.controllers;
 import com._clientes.demo.dto.ClienteDTO;
 
 import com._clientes.demo.services.ClienteService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -40,7 +41,7 @@ public class ClienteController {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<ClienteDTO> update(@PathVariable Long id, @RequestBody ClienteDTO dto) {
+    public ResponseEntity<ClienteDTO> update(@PathVariable Long id, @Valid @RequestBody ClienteDTO dto) {
         dto = service.update(id, dto);
         return ResponseEntity.ok(dto);
     }
